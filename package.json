@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-xx",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "eslint config xx",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,8 @@
   "author": "ShineShao <xiaoshaoqq@gmail.com>",
   "license": "MIT",
   "files": [
-    "index.js"
+    "index.js",
+    "prettier.config.js"
   ],
   "peerDependencies": {
     "eslint": "^8.0.1"

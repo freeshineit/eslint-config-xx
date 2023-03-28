@@ -1,0 +1,44 @@
+{
+  "name": "eslint-config-xx",
+  "version": "1.0.4",
+  "description": "eslint config xx",
+  "main": "index.js",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm"
+  },
+  "keywords": [
+    "eslint"
+  ],
+  "author": "ShineShao <xiaoshaoqq@gmail.com>",
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "peerDependencies": {
+    "eslint": "^8.0.1"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.43.0",
+    "@typescript-eslint/parser": "^5.57.0",
+    "eslint": "^8.0.1",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-config-standard-with-typescript": "^34.0.1",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "typescript": "^4.9.5"
+  },
+  "repository": "git@github.com:freeshineit/eslint-config-xx.git",
+  "bugs": {
+    "url": "https://github.com/freeshineit/eslint-config-xx/issues"
+  },
+  "homepage": "https://github.com/freeshineit/eslint-config-xx",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "devDependencies": {
+    "only-allow": "^1.1.1"
+  }
+}

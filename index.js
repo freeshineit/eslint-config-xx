@@ -16,7 +16,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react'],
+  plugins: ['react', 'jsx-a11y', 'react-hooks', '@typescript-eslint'],
   rules: {
     '@typescript-eslint/space-before-function-paren': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
@@ -26,9 +26,9 @@ module.exports = {
     '@typescript-eslint/indent': 'off',
     '@typescript-eslint/await-thenable': 'off',
     'multiline-ternary': 'off',
-    '@typescript-eslint/no-unused-vars': 1, // warn
-    'react-hooks/exhaustive-deps': 1, // error
+    '@typescript-eslint/no-unused-vars': 1,
+    'react-hooks/exhaustive-deps': 1,
     'comma-dangle': ['error', 'always-multiline'],
     '@typescript-eslint/comma-dangle': ['error', 'always-multiline'],
   },
-}
+};

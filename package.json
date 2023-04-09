@@ -1,10 +1,9 @@
 {
   "name": "eslint-config-xx",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "eslint config xx",
   "main": "index.js",
   "scripts": {
-    "preinstall": "npx only-allow pnpm",
     "lint": "npx eslint .",
     "fmt": "prettier --write \"**/*.{js,cjs}\""
   },
@@ -39,8 +38,5 @@
   "homepage": "https://github.com/freeshineit/eslint-config-xx",
   "engines": {
     "node": ">=14.0.0"
-  },
-  "devDependencies": {
-    "only-allow": "^1.1.1"
   }
 }

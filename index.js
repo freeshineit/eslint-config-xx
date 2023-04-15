@@ -31,7 +31,16 @@ module.exports = {
     'comma-dangle': ['error', 'always-multiline'],
     '@typescript-eslint/no-floating-promises': 0,
     '@typescript-eslint/comma-dangle': ['error', 'always-multiline'],
-
+    '@typescript-eslint/prefer-nullish-coalescing': 0,
+    '@typescript-eslint/naming-convention': [
+      1,
+      {
+        format: ['camelCase', 'PascalCase', 'UPPER_CASE'],
+        selector: 'variable',
+        leadingUnderscore: 'allow',
+        trailingUnderscore: 'allow',
+      },
+    ],
     'jsx-a11y/alt-text': 'warn',
     'jsx-a11y/anchor-has-content': 'warn',
     'jsx-a11y/anchor-is-valid': [

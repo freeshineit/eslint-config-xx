@@ -29,6 +29,18 @@ module.exports = {
     'multiline-ternary': 'off',
     '@typescript-eslint/no-unused-vars': 1,
     'react-hooks/exhaustive-deps': 1,
+    'no-unused-vars': [
+      'warn',
+      {
+        varsIgnorePattern: 'React',
+      },
+    ],
+    '@typescript-eslint/no-unused-vars': [
+      'warn',
+      {
+        varsIgnorePattern: 'React',
+      },
+    ],
     'comma-dangle': ['error', 'always-multiline'],
     '@typescript-eslint/no-floating-promises': 0,
     '@typescript-eslint/comma-dangle': ['error', 'always-multiline'],

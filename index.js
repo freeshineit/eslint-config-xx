@@ -4,6 +4,7 @@ module.exports = {
     browser: true,
     es2021: true,
     node: true,
+    jest: true,
   },
   extends: [
     'eslint:recommended',
@@ -27,7 +28,6 @@ module.exports = {
     '@typescript-eslint/indent': 'off',
     '@typescript-eslint/await-thenable': 'off',
     'multiline-ternary': 'off',
-    '@typescript-eslint/no-unused-vars': 1,
     'react-hooks/exhaustive-deps': 1,
     'no-unused-vars': [
       'warn',

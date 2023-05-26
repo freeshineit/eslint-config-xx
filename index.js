@@ -29,15 +29,11 @@ module.exports = {
     '@typescript-eslint/await-thenable': 'off',
     'multiline-ternary': 'off',
     'react-hooks/exhaustive-deps': 1,
-    'no-unused-vars': [
-      'warn',
-      {
-        varsIgnorePattern: 'React',
-      },
-    ],
+    'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': [
       'warn',
       {
+        // react-jsx
         varsIgnorePattern: 'React',
       },
     ],

@@ -10,7 +10,7 @@ Support js/ts/jsx/tsx and export prettier config
 ```bash
 yarn install eslint-config-xx -D
 ```
-### use
+### eslint config
 
 `.eslintrc.js`
 ```js
@@ -37,7 +37,7 @@ module.exports = {
 
 ```
 
-### prettier
+### prettier config
 
 `.prettierrc.js`
 ```js

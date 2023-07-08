@@ -5,12 +5,12 @@
 ![License](https://img.shields.io/npm/l/eslint-config-xx.svg)
 
 Support js/ts/jsx/tsx and export prettier config
-## use
+## install
 
 ```bash
 yarn install eslint-config-xx -D
 ```
-### example
+### use
 
 `.eslintrc.js`
 ```js

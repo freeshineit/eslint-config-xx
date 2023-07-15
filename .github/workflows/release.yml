@@ -32,14 +32,14 @@ jobs:
         run: pnpm install
 
       - name: Build Packages
-        run: pnpm run test
+        run: pnpm run lint
 
       - name: Build Packages
-        run: pnpm run build
+        run: pnpm run fmt
 
       # 发布npm
       - name: Publish npm
-        run: cd dist && npm publish --access public
+        run: npm publish --access public
         env:
           # 这里需要几个 Token 变量
           # NPM_TOKEN 需要在 npm 网站生成。

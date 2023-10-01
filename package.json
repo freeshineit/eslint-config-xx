@@ -40,7 +40,7 @@
   },
   "homepage": "https://github.com/freeshineit/eslint-config-xx",
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=16"
   },
   "devDependencies": {
     "pretty-quick": "^3.1.3"

@@ -12,7 +12,7 @@ specifiers:
   eslint-plugin-promise: ^6.1.1
   eslint-plugin-react: ^7.33.2
   eslint-plugin-react-hooks: ^4.6.0
-  prettier: ^3.0.3
+  prettier: ^2.8.8
   pretty-quick: ^3.1.3
   typescript: ^5.2.2
 
@@ -28,11 +28,11 @@ dependencies:
   eslint-plugin-promise: 6.1.1_eslint@8.50.0
   eslint-plugin-react: 7.33.2_eslint@8.50.0
   eslint-plugin-react-hooks: 4.6.0_eslint@8.50.0
-  prettier: 3.0.3
+  prettier: 2.8.8
   typescript: 5.2.2
 
 devDependencies:
-  pretty-quick: 3.1.3_prettier@3.0.3
+  pretty-quick: 3.1.3_prettier@2.8.8
 
 packages:
 
@@ -1773,12 +1773,12 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: false
 
-  /prettier/3.0.3:
-    resolution: {integrity: sha512-L/4pUDMxcNa8R/EthV08Zt42WBO4h1rarVtK0K+QJG0X187OLo7l699jWw0GKuwzkPQ//jMFA/8Xm6Fh3J/DAg==}
-    engines: {node: '>=14'}
+  /prettier/2.8.8:
+    resolution: {integrity: sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==}
+    engines: {node: '>=10.13.0'}
     hasBin: true
 
-  /pretty-quick/3.1.3_prettier@3.0.3:
+  /pretty-quick/3.1.3_prettier@2.8.8:
     resolution: {integrity: sha512-kOCi2FJabvuh1as9enxYmrnBC6tVMoVOenMaBqRfsvBHB0cbpYHjdQEpSglpASDFEXVwplpcGR4CLEaisYAFcA==}
     engines: {node: '>=10.13'}
     hasBin: true
@@ -1791,7 +1791,7 @@ packages:
       ignore: 5.2.4
       mri: 1.2.0
       multimatch: 4.0.0
-      prettier: 3.0.3
+      prettier: 2.8.8
     dev: true
 
   /prop-types/15.8.1:

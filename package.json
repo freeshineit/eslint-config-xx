@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "lint": "npx eslint .",
-    "fmt": "prettier --write \"**/*.{js,cjs}\""
+    "fmt": "prettier --write \"**/*.{js,cjs}\"",
+    "preinstall": "npx only-allow pnpm"
   },
   "keywords": [
     "eslint",
@@ -43,6 +44,7 @@
     "node": ">=16"
   },
   "devDependencies": {
+    "only-allow": "^1.2.1",
     "pretty-quick": "^3.1.3"
   }
 }

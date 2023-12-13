@@ -73,5 +73,6 @@ module.exports = {
     'jsx-a11y/role-supports-aria-props': 'warn',
     'jsx-a11y/scope': 'warn',
     '@typescript-eslint/no-extraneous-class': 'off',
+    '@typescript-eslint/non-nullable-type-assertion-style': 'off',
   },
 };

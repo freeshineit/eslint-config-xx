@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-xx",
-  "version": "1.7.0-alpha.1",
+  "version": "1.7.0-alpha.2",
   "description": "eslint config xx",
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,7 @@
     "tsconfig.json"
   ],
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^6.18.1",
+    "@typescript-eslint/eslint-plugin": "^6.19.0",
     "@typescript-eslint/parser": "^6.19.0",
     "eslint": "8.54.0",
     "eslint-config-prettier": "^9.1.0",

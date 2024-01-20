@@ -17,7 +17,7 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
-    project: true,
+    root: true,
   },
   plugins: ['react', 'jsx-a11y', 'react-hooks', '@typescript-eslint'],
   rules: {

@@ -1,12 +1,11 @@
 {
   "name": "eslint-config-xx",
-  "version": "1.7.0-alpha.0",
+  "version": "1.7.0-alpha.1",
   "description": "eslint config xx",
   "main": "index.js",
   "scripts": {
     "lint": "npx eslint .",
-    "fmt": "prettier --write \"**/*.{js,cjs}\"",
-    "preinstall": "npx only-allow pnpm"
+    "fmt": "prettier --write \"**/*.{js,cjs}\""
   },
   "keywords": [
     "eslint",
@@ -24,7 +23,7 @@
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^6.18.1",
     "@typescript-eslint/parser": "^6.19.0",
-    "eslint": "^8.56.0",
+    "eslint": "8.54.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-config-standard-with-typescript": "^43.0.1",
     "eslint-plugin-import": "^2.29.1",

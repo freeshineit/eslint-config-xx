@@ -42,7 +42,7 @@
   },
   "homepage": "https://github.com/freeshineit/eslint-config-xx",
   "engines": {
-    "node": ">=16"
+    "node": ">=18"
   },
   "devDependencies": {
     "only-allow": "^1.2.1",

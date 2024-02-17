@@ -1,3 +1,7 @@
+# v1.8.0 (2024-02-17)
+chore: update deps
+chore: remove node 16 support
+
 # v1.3.0 (2023-10-17)
 
 chore: update deps

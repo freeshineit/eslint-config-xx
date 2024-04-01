@@ -10,7 +10,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:react/jsx-runtime',
     'plugin:react-hooks/recommended',
-    'standard-with-typescript',
+    'love',
     'prettier',
   ],
   overrides: [],

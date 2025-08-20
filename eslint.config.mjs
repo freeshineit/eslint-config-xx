@@ -1,13 +1,14 @@
 // eslint.config.js
 import js from '@eslint/js';
+import pluginPrettier from 'eslint-plugin-prettier';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import globals from 'globals';
 import { configs } from 'typescript-eslint';
 import prettier from 'eslint-config-prettier';
-import pluginPrettier from 'eslint-plugin-prettier';
 import importPlugin from 'eslint-plugin-import';
 import love from 'eslint-config-love';
+import jsxA11yPlugin from 'eslint-plugin-jsx-a11y';
 
 // 合并所有配置
 export default [
@@ -19,12 +20,13 @@ export default [
   // React 配置
   {
     files: ['**/*.{js,mjs,jsx,ts,tsx}'],
-    ignores: ['**/dist/**', '**/build/**'],
+    ignores: ['**/dist/**', '**/build/**', '**/node_modules/**', '**/.next/**', '**/out/**', '**/*.d.ts'],
 
     plugins: {
       ...love.plugins,
       react,
       'react-hooks': reactHooks,
+      'jsx-a11y': jsxA11yPlugin,
       prettier: pluginPrettier,
       import: importPlugin,
     },
@@ -40,31 +42,48 @@ export default [
       globals: {
         ...globals.browser,
         ...globals.es2022,
+        ...globals.node,
+        React: 'readonly',
+        JSX: 'readonly',
       },
     },
 
     rules: {
       // ========== React 规则 ==========
       'react/react-in-jsx-scope': 'off',
-      'react/jsx-uses-react': 'error',
+      'react/jsx-uses-react': 'off',
       'react/jsx-uses-vars': 'error',
-      'react/jsx-boolean-value': ['error', 'never'],
-      'react/jsx-closing-bracket-location': 'error',
-      'react/jsx-closing-tag-location': 'error',
-      'react/jsx-curly-spacing': ['error', { when: 'never', children: true }],
-      'react/jsx-equals-spacing': ['error', 'never'],
-      'react/jsx-first-prop-new-line': ['error', 'multiline'],
+      'react/jsx-key': 'error',
+      'react/jsx-no-duplicate-props': 'error',
+      'react/jsx-no-undef': 'error',
+      'react/jsx-pascal-case': 'error',
       'react/jsx-fragments': ['error', 'syntax'],
       'react/jsx-no-useless-fragment': 'error',
-      'react/jsx-pascal-case': 'error',
-      'react/jsx-props-no-multi-spaces': 'error',
-      'react/jsx-tag-spacing': 'error',
+      'react/jsx-curly-brace-presence': ['error', { props: 'never', children: 'never' }],
+      'react/self-closing-comp': 'error',
+      'react/no-unescaped-entities': 'error',
       'react/no-children-prop': 'error',
       'react/no-danger-with-children': 'error',
+      'react/no-deprecated': 'error',
+      'react/no-direct-mutation-state': 'error',
+      'react/no-find-dom-node': 'error',
+      'react/no-is-mounted': 'error',
+      'react/no-render-return-value': 'error',
+      'react/no-string-refs': 'error',
+      'react/no-unknown-property': 'error',
 
       // ========== React Hooks 规则 ==========
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'warn',
+
+      // ========== JSX Accessibility 规则 ==========
+      'jsx-a11y/alt-text': 'error',
+      'jsx-a11y/anchor-is-valid': 'error',
+      'jsx-a11y/aria-props': 'error',
+      'jsx-a11y/aria-proptypes': 'error',
+      'jsx-a11y/aria-unsupported-elements': 'error',
+      'jsx-a11y/role-has-required-aria-props': 'error',
+      'jsx-a11y/role-supports-aria-props': 'error',
 
       // ========== TypeScript 规则 ==========
       '@typescript-eslint/no-unused-vars': [
@@ -72,11 +91,20 @@ export default [
         {
           argsIgnorePattern: '^_',
           varsIgnorePattern: '^_',
+          caughtErrorsIgnorePattern: '^_',
         },
       ],
+      '@typescript-eslint/no-explicit-any': 'warn',
       '@typescript-eslint/explicit-function-return-type': 'off',
       '@typescript-eslint/explicit-module-boundary-types': 'off',
-      '@typescript-eslint/no-explicit-any': 'warn',
+      '@typescript-eslint/ban-ts-comment': 'warn',
+      '@typescript-eslint/no-inferrable-types': 'error',
+      '@typescript-eslint/no-empty-interface': 'error',
+      '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
+
+      // ========== Import 规则 ==========
+      'import/no-duplicates': 'error',
+      'import/no-unresolved': 'off', // TypeScript 已经处理了
 
       // ========== 基础 ESLint 规则 ==========
       'no-unused-vars': 'off', // 使用 TypeScript 的版本
@@ -91,30 +119,30 @@ export default [
       react: {
         version: 'detect',
       },
-      'import/resolver': {
-        typescript: {
-          project: './tsconfig.json', // Adjust path if your tsconfig.json is elsewhere
-        },
+      typescript: {
+        alwaysTryTypes: true,
+        project: './tsconfig.json',
+      },
+      node: {
+        extensions: ['.js', '.mjs', '.jsx', '.ts', '.tsx'],
       },
     },
   },
 
-  // 禁用所有与 Prettier 冲突的规则
-  // {
-  //   files: ['**/*.{js,mjs,jsx,ts,tsx}'],
-  //   rules: {
-  //     ...love.rules,
-  //     ...prettier.rules,
-  //   },
-  //   settings: {
-  //     react: {
-  //       version: 'detect',
-  //     },
-  //     'import/resolver': {
-  //       typescript: {
-  //         project: './tsconfig.json', // Adjust path if your tsconfig.json is elsewhere
-  //       },
-  //     },
-  //   },
-  // },
+  // ========== 测试文件配置 ==========
+  {
+    files: ['**/*.test.{js,jsx,ts,tsx}', '**/__tests__/**'],
+    rules: {
+      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/no-non-null-assertion': 'off',
+    },
+  },
+
+  // ========== 配置文件特殊规则 ==========
+  {
+    files: ['*.config.js', '*.config.ts'],
+    rules: {
+      '@typescript-eslint/no-var-requires': 'off',
+    },
+  },
 ];

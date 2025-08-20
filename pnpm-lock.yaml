@@ -4,72 +4,86 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-dependencies:
-  '@eslint/js':
-    specifier: ^9.33.0
-    version: 9.33.0
-  '@typescript-eslint/eslint-plugin':
-    specifier: ^8.40.0
-    version: 8.40.0(@typescript-eslint/parser@8.40.0)(eslint@9.33.0)(typescript@5.9.2)
-  '@typescript-eslint/parser':
-    specifier: ^8.40.0
-    version: 8.40.0(eslint@9.33.0)(typescript@5.9.2)
-  eslint:
-    specifier: ^9.33.0
-    version: 9.33.0
-  eslint-config-love:
-    specifier: ^121.0.0
-    version: 121.0.0(@typescript-eslint/parser@8.40.0)(eslint-import-resolver-typescript@4.4.4)(eslint@9.33.0)(typescript@5.9.2)
-  eslint-config-prettier:
-    specifier: ^10.1.8
-    version: 10.1.8(eslint@9.33.0)
-  eslint-import-resolver-typescript:
-    specifier: ^4.4.4
-    version: 4.4.4(eslint-plugin-import@2.32.0)(eslint@9.33.0)
-  eslint-plugin-import:
-    specifier: ^2.32.0
-    version: 2.32.0(@typescript-eslint/parser@8.40.0)(eslint-import-resolver-typescript@4.4.4)(eslint@9.33.0)
-  eslint-plugin-jsx-a11y:
-    specifier: ^6.10.2
-    version: 6.10.2(eslint@9.33.0)
-  eslint-plugin-n:
-    specifier: ^17.21.3
-    version: 17.21.3(eslint@9.33.0)(typescript@5.9.2)
-  eslint-plugin-prettier:
-    specifier: ^5.5.4
-    version: 5.5.4(eslint-config-prettier@10.1.8)(eslint@9.33.0)(prettier@3.6.2)
-  eslint-plugin-promise:
-    specifier: ^7.2.1
-    version: 7.2.1(eslint@9.33.0)
-  eslint-plugin-react:
-    specifier: ^7.37.5
-    version: 7.37.5(eslint@9.33.0)
-  eslint-plugin-react-hooks:
-    specifier: ^5.2.0
-    version: 5.2.0(eslint@9.33.0)
-  globals:
-    specifier: ^16.3.0
-    version: 16.3.0
-  prettier:
-    specifier: ^3.6.2
-    version: 3.6.2
-  typescript:
-    specifier: ^5.9.2
-    version: 5.9.2
-  typescript-eslint:
-    specifier: ^8.40.0
-    version: 8.40.0(eslint@9.33.0)(typescript@5.9.2)
+importers:
 
-devDependencies:
-  only-allow:
-    specifier: ^1.2.1
-    version: 1.2.1
-  pretty-quick:
-    specifier: ^4.2.2
-    version: 4.2.2(prettier@3.6.2)
-  react:
-    specifier: ^19.1.1
-    version: 19.1.1
+  .:
+    dependencies:
+      eslint:
+        specifier: ^9.33.0
+        version: 9.33.0
+      eslint-config-xx:
+        specifier: workspace:*
+        version: link:configs
+      prettier:
+        specifier: ^3.6.2
+        version: 3.6.2
+      typescript:
+        specifier: ^5.9.2
+        version: 5.9.2
+    devDependencies:
+      only-allow:
+        specifier: ^1.2.1
+        version: 1.2.1
+      pretty-quick:
+        specifier: ^4.2.2
+        version: 4.2.2(prettier@3.6.2)
+
+  configs:
+    dependencies:
+      '@eslint/js':
+        specifier: ^9.33.0
+        version: 9.33.0
+      '@typescript-eslint/eslint-plugin':
+        specifier: ^8.40.0
+        version: 8.40.0(@typescript-eslint/parser@8.40.0)(eslint@9.33.0)(typescript@5.9.2)
+      '@typescript-eslint/parser':
+        specifier: ^8.40.0
+        version: 8.40.0(eslint@9.33.0)(typescript@5.9.2)
+      eslint:
+        specifier: ^9.33.0
+        version: 9.33.0
+      eslint-config-love:
+        specifier: ^121.0.0
+        version: 121.0.0(@typescript-eslint/parser@8.40.0)(eslint-import-resolver-typescript@4.4.4)(eslint@9.33.0)(typescript@5.9.2)
+      eslint-config-prettier:
+        specifier: ^10.1.8
+        version: 10.1.8(eslint@9.33.0)
+      eslint-import-resolver-typescript:
+        specifier: ^4.4.4
+        version: 4.4.4(eslint-plugin-import@2.32.0)(eslint@9.33.0)
+      eslint-plugin-import:
+        specifier: ^2.32.0
+        version: 2.32.0(@typescript-eslint/parser@8.40.0)(eslint-import-resolver-typescript@4.4.4)(eslint@9.33.0)
+      eslint-plugin-jsx-a11y:
+        specifier: ^6.10.2
+        version: 6.10.2(eslint@9.33.0)
+      eslint-plugin-n:
+        specifier: ^17.21.3
+        version: 17.21.3(eslint@9.33.0)(typescript@5.9.2)
+      eslint-plugin-prettier:
+        specifier: ^5.5.4
+        version: 5.5.4(eslint-config-prettier@10.1.8)(eslint@9.33.0)(prettier@3.6.2)
+      eslint-plugin-promise:
+        specifier: ^7.2.1
+        version: 7.2.1(eslint@9.33.0)
+      eslint-plugin-react:
+        specifier: ^7.37.5
+        version: 7.37.5(eslint@9.33.0)
+      eslint-plugin-react-hooks:
+        specifier: ^5.2.0
+        version: 5.2.0(eslint@9.33.0)
+      globals:
+        specifier: ^16.3.0
+        version: 16.3.0
+      prettier:
+        specifier: ^3.6.2
+        version: 3.6.2
+      typescript:
+        specifier: ^5.9.2
+        version: 5.9.2
+      typescript-eslint:
+        specifier: ^8.40.0
+        version: 8.40.0(eslint@9.33.0)(typescript@5.9.2)
 
 packages:
 
@@ -2245,11 +2259,6 @@ packages:
   /react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
     dev: false
-
-  /react@19.1.1:
-    resolution: {integrity: sha512-w8nqGImo45dmMIfljjMwOGtbmC/mk4CMYhWIicdSflH91J9TyCyczcPFXJzrZ/ZXcgGRFeP6BU0BEJTw6tZdfQ==}
-    engines: {node: '>=0.10.0'}
-    dev: true
 
   /reflect.getprototypeof@1.0.10:
     resolution: {integrity: sha512-00o4I+DVrefhv+nX0ulyi3biSHCPDe+yLv5o/p6d/UVlirijB8E16FtfwSAi4g3tcqrQ4lRAqQSoFEZJehYEcw==}

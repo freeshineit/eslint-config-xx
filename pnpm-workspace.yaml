@@ -1,0 +1,6 @@
+packages:
+  - "examples/*"
+  - "configs"
+  - "!**/test/**"
+  - "!**/dist/**"
+  - "!**/build/**"

@@ -37,8 +37,8 @@ jobs:
       - name: Build Packages
         run: pnpm run fmt
 
-      # 发布npm
-      - name: Publish npm
+      - name: Publish npm eslint configs
+        working-directory: ./configs
         run: npm publish --access public
         env:
           # 这里需要几个 Token 变量

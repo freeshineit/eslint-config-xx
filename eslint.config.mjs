@@ -7,14 +7,14 @@ import { configs } from 'typescript-eslint';
 import prettier from 'eslint-config-prettier';
 import pluginPrettier from 'eslint-plugin-prettier';
 import importPlugin from 'eslint-plugin-import';
+import love from 'eslint-config-love';
 
 // 合并所有配置
 export default [
   // 基础配置
   js.configs.recommended,
   ...configs.recommended,
-  importPlugin.flatConfigs.recommended,
-  importPlugin.flatConfigs.typescript,
+  prettier,
 
   // React 配置
   {
@@ -22,9 +22,11 @@ export default [
     ignores: ['**/dist/**', '**/build/**'],
 
     plugins: {
+      ...love.plugins,
       react,
       'react-hooks': reactHooks,
       prettier: pluginPrettier,
+      import: importPlugin,
     },
 
     languageOptions: {
@@ -98,20 +100,21 @@ export default [
   },
 
   // 禁用所有与 Prettier 冲突的规则
-  {
-    files: ['**/*.{js,mjs,jsx,ts,tsx}'],
-    rules: {
-      ...prettier.rules,
-    },
-    settings: {
-      react: {
-        version: 'detect',
-      },
-      'import/resolver': {
-        typescript: {
-          project: './tsconfig.json', // Adjust path if your tsconfig.json is elsewhere
-        },
-      },
-    },
-  },
+  // {
+  //   files: ['**/*.{js,mjs,jsx,ts,tsx}'],
+  //   rules: {
+  //     ...love.rules,
+  //     ...prettier.rules,
+  //   },
+  //   settings: {
+  //     react: {
+  //       version: 'detect',
+  //     },
+  //     'import/resolver': {
+  //       typescript: {
+  //         project: './tsconfig.json', // Adjust path if your tsconfig.json is elsewhere
+  //       },
+  //     },
+  //   },
+  // },
 ];

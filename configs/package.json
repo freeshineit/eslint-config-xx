@@ -12,6 +12,13 @@
   ],
   "author": "ShineShao <xiaoshaoqq@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "lint": "eslint . --ext .js,.mjs,.jsx,.ts,.tsx",
+    "lint:fix": "eslint . --ext .js,.mjs,.jsx,.ts,.tsx --fix",
+    "fmt": "prettier --write \"**/*.{js,mjs,jsx,ts,tsx,css,md,json}\"",
+    "fmt:check": "prettier --check \"**/*.{js,mjs,jsx,ts,tsx,css,md,json}\"",
+    "lint:fmt": "npm run lint && npm run fmt:check"
+  },
   "files": [
     "eslint.config.mjs",
     "prettier.config.mjs",

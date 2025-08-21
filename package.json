@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "description": "eslint config xx",
   "scripts": {
-    "lint": "eslint . --ext .js,.mjs,.jsx,.ts,.tsx",
+    "lint": "pnpm run --filter '*' lint",
     "lint:fix": "eslint . --ext .js,.mjs,.jsx,.ts,.tsx --fix",
-    "fmt": "prettier --write \"**/*.{js,mjs,jsx,ts,tsx,css,md,json}\"",
+    "fmt": "pnpm run --filter '*' fmt",
     "fmt:check": "prettier --check \"**/*.{js,mjs,jsx,ts,tsx,css,md,json}\"",
     "lint:fmt": "npm run lint && npm run fmt:check"
   },

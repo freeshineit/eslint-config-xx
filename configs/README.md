@@ -14,39 +14,46 @@ yarn install eslint-config-xx -D
 
 ### eslint config
 
-`.eslintrc.js`
+`eslint.config.js`
 
 ```js
-module.exports = {
-  extends: 'xx',
-  overrides: [],
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-  },
-  rules: {
-    // '@typescript-eslint/space-before-function-paren': 'off',
-    // '@typescript-eslint/explicit-function-return-type': 'off',
-    // '@typescript-eslint/strict-boolean-expressions': 'off',
-    // '@typescript-eslint/no-confusing-void-expression': 'off',
-    // '@typescript-eslint/triple-slash-reference': 'off',
-    // '@typescript-eslint/indent': 'off',
-    // '@typescript-eslint/await-thenable': 'off',
-    // 'multiline-ternary': 'off',
-    // '@typescript-eslint/no-unused-vars': 1, // warn
-    // 'react-hooks/exhaustive-deps': 2 // error
-  },
-};
+// import js from '@eslint/js';
+// import globals from 'globals';
+// import reactHooks from 'eslint-plugin-react-hooks';
+// import reactRefresh from 'eslint-plugin-react-refresh';
+import { defineConfig, globalIgnores } from 'eslint/config';
+import configs from 'eslint-config-xx';
+
+export default defineConfig([
+  globalIgnores(['dist']),
+  ...configs,
+  // {
+  //   files: ['**/*.{js,jsx}'],
+  //   extends: [js.configs.recommended, reactHooks.configs['recommended-latest'], reactRefresh.configs.vite],
+  //   languageOptions: {
+  //     ecmaVersion: 2020,
+  //     globals: globals.browser,
+  //     parserOptions: {
+  //       ecmaVersion: 'latest',
+  //       ecmaFeatures: { jsx: true },
+  //       sourceType: 'module',
+  //     },
+  //   },
+  //   rules: {
+  //     'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
+  //   },
+  // },
+]);
 ```
 
 ### prettier config
 
-`.prettierrc.js`
+`prettier.config.mjs`
 
 ```js
-module.exports = {
-  ...require('eslint-config-xx/prettier.config'),
-};
+import configs from 'eslint-config-xx/prettier.config.mjs';
+
+export default configs;
 ```
 
 ### js 项目
@@ -76,7 +83,7 @@ Parsing error: project was set to `true` but couldn't find any tsconfig.json rel
     "resolveJsonModule": true,
     "jsx": "react-jsx"
   },
-  "include": ["./index.js", "./.prettierrc.cjs"],
+  "include": ["./eslint.config.js", "./prettier.config.mjs"],
   "exclude": ["node_modules"]
 }
 ```

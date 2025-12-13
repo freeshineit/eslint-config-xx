@@ -1,46 +1,55 @@
 # 整个流程的名字
 name: Release
-
-# 触发时机，在 tag push 操作触发
+# 触发时机，在 tag 被 push 操作触发
 on:
   push:
     tags:
       - 'v*'
 
+permissions:
+  id-token: write # Required for OIDC
+  contents: read
+
+# 任务，定义个changelog 的任务
 jobs:
   changelog:
     name: Release
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      # 设置 pnpm
-      - name: Setup PNPM
-        uses: pnpm/action-setup@v3
-        with:
-          version: ^8.0
 
       # 设置 Node
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: pnpm
           registry-url: https://registry.npmjs.org
+      - run: npm install -g npm@latest
 
-      # 安装依赖
-      - name: Install dependencies
-        run: pnpm install
+      # 设置 pnpm
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
 
-      - name: Build Packages
-        run: pnpm run lint
+      # 获取 tag 的版本类型（仅支持 正式版、alpha和beta版）
+      - name: Determine release tag
+        id: determine_tag
+        run: |
+          TAG=$(echo "${GITHUB_REF}" | sed 's/refs\/tags\/\(.*\)/\1/')
+          if [[ "$TAG" =~ -alpha ]]; then
+            echo "tag=alpha" >> "$GITHUB_OUTPUT"
+          elif [[ "$TAG" =~ -beta ]]; then
+            echo "tag=beta" >> "$GITHUB_OUTPUT"
+          elif [[ "$TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "tag=latest" >> "$GITHUB_OUTPUT"
+          else
+            echo "Unsupported version detected. Terminating."
+            exit 1
+          fi
 
-      - name: Build Packages
-        run: pnpm run fmt
-
-      # 发布npm
-      - name: Publish npm
-        run: npm publish --access public
-        env:
-          # 这里需要几个 Token 变量
-          # NPM_TOKEN 需要在 npm 网站生成。
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Publish npm eslint configs
+        working-directory: ./configs
+        run: |
+          pnpm install
+          npm publish --tag ${{ steps.determine_tag.outputs.tag }} --access public

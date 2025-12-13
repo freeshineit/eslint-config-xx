@@ -1,0 +1,25 @@
+{
+  "name": "with-lit-ts",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "fmt": "prettier --write \"**/*.{js,mjs,jsx,ts,tsx,css,md,json}\"",
+    "fmt:check": "prettier --check \"src/**/*.{js,mjs,jsx,ts,tsx,css,md,json}\""
+  },
+  "dependencies": {
+    "lit": "^3.3.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.33.0",
+    "typescript": "~5.8.3",
+    "vite": "^7.1.2",
+    "prettier": "^3.6.2",
+    "eslint": "^9.33.0",
+    "eslint-config-xx": "workspace:*"
+  }
+}

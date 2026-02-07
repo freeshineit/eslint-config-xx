@@ -9,6 +9,7 @@ import reactHooks from 'eslint-plugin-react-hooks';
 import globals from 'globals';
 import love from 'eslint-config-love';
 import tseslint from 'typescript-eslint';
+import prettierConfig from './prettier.config.mjs';
 
 // 合并所有配置
 export default [
@@ -117,8 +118,10 @@ export default [
       'no-console': ['warn', { allow: ['warn', 'error'] }],
       'prefer-const': 'error',
       'no-var': 'error',
+      'comma-dangle': 'warn',
+      '@typescript-eslint/comma-dangle': 'warn',
       // Prettier
-      'prettier/prettier': 'error',
+      'prettier/prettier': ['error', prettierConfig],
     },
 
     settings: {

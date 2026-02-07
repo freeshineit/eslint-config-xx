@@ -1,34 +1,36 @@
 // eslint.config.js
 import js from '@eslint/js';
+import prettier from 'eslint-config-prettier';
+import importPlugin from 'eslint-plugin-import';
+import jsxA11yPlugin from 'eslint-plugin-jsx-a11y';
 import pluginPrettier from 'eslint-plugin-prettier';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import globals from 'globals';
-import { configs } from 'typescript-eslint';
-import prettier from 'eslint-config-prettier';
-import importPlugin from 'eslint-plugin-import';
 import love from 'eslint-config-love';
-import jsxA11yPlugin from 'eslint-plugin-jsx-a11y';
+import tseslint from 'typescript-eslint';
 
 // 合并所有配置
 export default [
+  {
+    ignores: ['**/dist/**', '**/build/**', '**/node_modules/**', '**/.next/**', '**/out/**', '**/coverage/**', '**/.turbo/**', '**/.cache/**', '**/*.d.ts'],
+  },
+
   // 基础配置
   js.configs.recommended,
-  ...configs.recommended,
+  ...tseslint.configs.recommended,
   prettier,
 
-  // React 配置
+  // React / TS / Import / Prettier 配置
   {
-    files: ['**/*.{js,mjs,jsx,ts,tsx}'],
-    ignores: ['**/dist/**', '**/build/**', '**/node_modules/**', '**/.next/**', '**/out/**', '**/*.d.ts'],
-
+    files: ['**/*.{js,mjs,cjs,jsx,ts,tsx}'],
     plugins: {
       ...love.plugins,
       react,
       'react-hooks': reactHooks,
       'jsx-a11y': jsxA11yPlugin,
-      prettier: pluginPrettier,
       import: importPlugin,
+      prettier: pluginPrettier,
     },
 
     languageOptions: {
@@ -46,6 +48,10 @@ export default [
         React: 'readonly',
         JSX: 'readonly',
       },
+    },
+
+    linterOptions: {
+      reportUnusedDisableDirectives: 'error',
     },
 
     rules: {
@@ -119,12 +125,14 @@ export default [
       react: {
         version: 'detect',
       },
-      typescript: {
-        alwaysTryTypes: true,
-        project: './tsconfig.json',
+      'import/resolver': {
+        typescript: {
+          alwaysTryTypes: true,
+          project: './tsconfig.json',
+        },
       },
       node: {
-        extensions: ['.js', '.mjs', '.jsx', '.ts', '.tsx'],
+        extensions: ['.js', '.mjs', '.cjs', '.jsx', '.ts', '.tsx'],
       },
     },
   },
@@ -140,7 +148,7 @@ export default [
 
   // ========== 配置文件特殊规则 ==========
   {
-    files: ['*.config.js', '*.config.ts'],
+    files: ['*.config.js', '*.config.ts', '*.config.mjs'],
     rules: {
       '@typescript-eslint/no-var-requires': 'off',
     },

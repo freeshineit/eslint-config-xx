@@ -118,8 +118,8 @@ export default [
       'no-console': ['warn', { allow: ['warn', 'error'] }],
       'prefer-const': 'error',
       'no-var': 'error',
-      'comma-dangle': 'warn',
-      '@typescript-eslint/comma-dangle': 'warn',
+      'comma-dangle': 'off',
+      '@typescript-eslint/comma-dangle': 'off',
       // Prettier
       'prettier/prettier': ['error', prettierConfig],
     },

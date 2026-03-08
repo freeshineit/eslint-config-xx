@@ -7,5 +7,5 @@ export default {
   bracketSpacing: true,
   bracketSameLine: true,
   arrowParens: 'avoid',
-  endOfLine: 'lf',
+  endOfLine: 'auto',
 };

@@ -4,6 +4,6 @@
 ![Version](https://img.shields.io/npm/v/eslint-config-xx.svg)
 ![License](https://img.shields.io/npm/l/eslint-config-xx.svg)
 
-Support js/ts/jsx/tsx and export prettier config
+Support js/ts/jsx/tsx/vue and export prettier config
 
 [README.md](./configs/README.md)

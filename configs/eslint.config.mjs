@@ -9,6 +9,8 @@ import reactHooks from 'eslint-plugin-react-hooks';
 import globals from 'globals';
 import love from 'eslint-config-love';
 import tseslint from 'typescript-eslint';
+import vuePlugin from 'eslint-plugin-vue';
+import vueParser from 'vue-eslint-parser';
 import prettierConfig from './prettier.config.mjs';
 
 // 合并所有配置
@@ -137,6 +139,26 @@ export default [
       node: {
         extensions: ['.js', '.mjs', '.cjs', '.jsx', '.ts', '.tsx'],
       },
+    },
+  },
+
+  // ========== Vue 配置 ==========
+  {
+    files: ['**/*.vue'],
+    plugins: {
+      vue: vuePlugin,
+    },
+    languageOptions: {
+      parser: vueParser,
+      parserOptions: {
+        parser: tseslint.parser,
+        extraFileExtensions: ['.vue'],
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+      },
+    },
+    rules: {
+      ...vuePlugin.configs['flat/recommended'].rules,
     },
   },
 

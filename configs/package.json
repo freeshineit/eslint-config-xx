@@ -50,7 +50,7 @@
   "bugs": {
     "url": "https://github.com/freeshineit/eslint-config-xx/issues"
   },
-  "homepage": "https://github.com/freeshineit/eslint-config-xx",
+  "homepage": "https://github.com/freeshineit/eslint-config-xx/tree/main/configs",
   "engines": {
     "node": ">=18"
   }

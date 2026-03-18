@@ -1,17 +1,31 @@
+# v2.1.2 (2024-03-09)
+
+## Feat
+
+- update prettier config
+
 # v1.8.0 (2024-02-17)
 
-chore: update deps
+## Feat
 
-chore: remove node 16 support
+- chore: update deps
+
+- chore: remove node 16 support
 
 # v1.3.0 (2023-10-17)
 
-chore: update deps
+## Feat
+
+- chore: update deps
 
 # v1.2.0 (2023-10-02)
 
-feat: support typescript@5.2 and node minimum version 16
+## Feat
+
+- feat: support typescript@5.2 and node minimum version 16
 
 # v1.1.8 (2023-07-09)
 
-feat: support typescript@5.1
+## Feat
+
+- feat: support typescript@5.1

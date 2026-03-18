@@ -9,12 +9,18 @@ Support js/ts/jsx/tsx/vue and export prettier config
 ## install
 
 ```bash
-yarn install eslint-config-xx -D
+npm install eslint-config-xx -D
+
+# or yarn
+yarn add eslint-config-xx -D
+
+# or pnpm
+pnpm add eslint-config-xx -D
 ```
 
 ### eslint config
 
-`eslint.config.js`
+Create `eslint.config.mjs` file, then add the following code
 
 ```js
 // import js from '@eslint/js';
@@ -48,9 +54,10 @@ export default defineConfig([
 
 ### prettier config
 
-`prettier.config.mjs`
+Create `prettier.config.mjs` file, then add the following code
 
 ```js
+// import prettier config
 import configs from 'eslint-config-xx/prettier.config.mjs';
 
 export default configs;

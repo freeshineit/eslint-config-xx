@@ -90,7 +90,7 @@ Parsing error: project was set to `true` but couldn't find any tsconfig.json rel
     "resolveJsonModule": true,
     "jsx": "react-jsx"
   },
-  "include": ["./eslint.config.js", "./prettier.config.mjs"],
+  "include": ["./eslint.config.mjs", "./prettier.config.mjs"],
   "exclude": ["node_modules"]
 }
 ```

@@ -156,6 +156,10 @@ export default [
         ecmaVersion: 'latest',
         sourceType: 'module',
       },
+      globals: {
+        fetch: 'readonly',
+        // other browser globals can go here
+      },
     },
     rules: {
       ...vuePlugin.configs['flat/recommended'].rules,
@@ -164,7 +168,7 @@ export default [
 
   // ========== 测试文件配置 ==========
   {
-    files: ['**/*.test.{js,jsx,ts,tsx}', '**/__tests__/**'],
+    files: ['**/*.test.{js,jsx,ts,tsx,mjs}', '**/__tests__/**'],
     rules: {
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-non-null-assertion': 'off',

@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "eslint config xx",
   "scripts": {
+    "build": "pnpm run --filter '*' build",
     "lint": "pnpm run --filter '*' lint",
     "lint:fix": "eslint . --ext .js,.mjs,.jsx,.ts,.tsx,.vue --fix",
     "fmt": "pnpm run --filter '*' fmt",

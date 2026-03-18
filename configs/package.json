@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-xx",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "eslint config xx",
   "main": "eslint.config.mjs",
   "module": "eslint.config.mjs",
@@ -13,6 +13,7 @@
   "author": "ShineShao <xiaoshaoqq@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "build": "",
     "lint": "eslint . --ext .js,.mjs,.jsx,.ts,.tsx,.vue",
     "lint:fix": "eslint . --ext .js,.mjs,.jsx,.ts,.tsx,.vue --fix",
     "fmt": "prettier --write \"**/*.{js,mjs,jsx,ts,tsx,vue,css,md,json}\"",

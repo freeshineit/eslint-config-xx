@@ -20,7 +20,7 @@ export default {
   /** 行尾换行符（默认 "lf"；auto 会跟随系统/文件） */
   endOfLine: 'auto',
   /** 对象属性名是否加引号 */
-  quoteProps: "as-needed",
+  quoteProps: 'as-needed',
   /** JSX 属性用单引号 */
   jsxSingleQuote: false,
 };

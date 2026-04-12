@@ -48,6 +48,7 @@ export default [
         ...globals.browser,
         ...globals.es2022,
         ...globals.node,
+        ...globals.jest,
         React: "readonly",
         JSX: "readonly",
       },
@@ -157,6 +158,10 @@ export default [
         sourceType: "module",
       },
       globals: {
+        ...globals.browser,
+        ...globals.es2022,
+        ...globals.node,
+        ...globals.jest,
         fetch: "readonly",
         // other browser globals can go here
       },
@@ -170,6 +175,14 @@ export default [
   // ========== 测试文件配置 ==========
   {
     files: ["**/*.test.{js,jsx,ts,tsx,mjs}", "**/__tests__/**"],
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...globals.es2022,
+        ...globals.node,
+        ...globals.jest,
+      },
+    },
     rules: {
       "@typescript-eslint/no-explicit-any": "off",
       "@typescript-eslint/no-non-null-assertion": "off",
@@ -180,6 +193,14 @@ export default [
   // ========== 配置文件特殊规则 ==========
   {
     files: ["*.config.js", "*.config.ts", "*.config.mjs"],
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...globals.es2022,
+        ...globals.node,
+        ...globals.jest,
+      },
+    },
     rules: {
       "@typescript-eslint/no-var-requires": "off",
       "no-console": "off",

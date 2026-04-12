@@ -163,6 +163,7 @@ export default [
     },
     rules: {
       ...vuePlugin.configs["flat/recommended"].rules,
+      "no-console": ["warn", { allow: ["warn", "error"] }],
     },
   },
 
@@ -172,6 +173,7 @@ export default [
     rules: {
       "@typescript-eslint/no-explicit-any": "off",
       "@typescript-eslint/no-non-null-assertion": "off",
+      "no-console": "off",
     },
   },
 
@@ -180,6 +182,7 @@ export default [
     files: ["*.config.js", "*.config.ts", "*.config.mjs"],
     rules: {
       "@typescript-eslint/no-var-requires": "off",
+      "no-console": "off",
     },
   },
 ];

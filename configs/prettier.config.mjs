@@ -16,7 +16,7 @@ export default {
   /** HTML/JSX 等 > 是否放同一行（默认 false，常用于 JSX/HTML） */
   bracketSameLine: true,
   /** 箭头函数参数是否总带括号 */
-  arrowParens: "avoid",
+  arrowParens: "always",
   /** 行尾换行符（默认 "lf"；auto 会跟随系统/文件） */
   endOfLine: "auto",
   /** 对象属性名是否加引号 */

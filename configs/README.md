@@ -78,7 +78,7 @@ Parsing error: project was set to `true` but couldn't find any tsconfig.json rel
     "sourceMap": true,
     "allowJs": true,
     "outDir": "dist",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,

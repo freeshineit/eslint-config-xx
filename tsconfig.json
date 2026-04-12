@@ -18,6 +18,6 @@
     "resolveJsonModule": true,
     "jsx": "react-jsx"
   },
-  "include": ["eslint.config.mjs, prettierrc.config.mjs"],
+  "include": ["eslint.config.mjs", "prettierrc.config.mjs"],
   "exclude": ["node_modules"]
 }

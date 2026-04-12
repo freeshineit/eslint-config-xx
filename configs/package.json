@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-xx",
-  "version": "2.1.3",
+  "version": "2.2.0",
   "description": "eslint config xx",
   "main": "eslint.config.mjs",
   "module": "eslint.config.mjs",

@@ -1,6 +1,6 @@
-import { LitElement, css, html } from 'lit';
-import litLogo from './assets/lit.svg';
-import viteLogo from '/vite.svg';
+import { LitElement, css, html } from "lit";
+import litLogo from "./assets/lit.svg";
+import viteLogo from "/vite.svg";
 
 /**
  * An example element.
@@ -25,7 +25,7 @@ export class MyElement extends LitElement {
 
   constructor() {
     super();
-    this.docsHint = 'Click on the Vite and Lit logos to learn more';
+    this.docsHint = "Click on the Vite and Lit logos to learn more";
     this.count = 0;
   }
 
@@ -126,4 +126,4 @@ export class MyElement extends LitElement {
   }
 }
 
-window.customElements.define('my-element', MyElement);
+window.customElements.define("my-element", MyElement);

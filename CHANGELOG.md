@@ -1,3 +1,17 @@
+# v2.2.4 (2026-04-26)
+
+## Feat
+
+- update deps
+
+# v2.2.3 (2026-04-12)
+
+## Feat
+
+- update deps
+
+- update prettier config `{arrowParens: "always", singleQuote: false}`
+
 # v2.1.2 (2024-03-09)
 
 ## Feat

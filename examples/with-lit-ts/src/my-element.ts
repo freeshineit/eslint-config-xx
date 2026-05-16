@@ -24,6 +24,14 @@ export class MyElement extends LitElement {
   count = 0;
 
   render() {
+    console.log("Hello, I'm a Lit element!");
+    console.warn("This is a warning message.");
+    console.error("This is an error message.");
+    console.debug("This is a debug message.");
+    console.info("This is an info message.");
+    debugger;
+    window.alert("This is an alert message.");
+
     return html`
       <div>
         <a href="https://vite.dev" target="_blank">

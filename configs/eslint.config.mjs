@@ -125,6 +125,8 @@ export default [
       "@typescript-eslint/comma-dangle": "off",
       // Prettier
       "prettier/prettier": ["error", prettierConfig],
+      "no-debugger": "warn",
+      "no-alert": "warn",
     },
 
     settings: {
@@ -169,6 +171,8 @@ export default [
     rules: {
       ...vuePlugin.configs["flat/recommended"].rules,
       "no-console": ["warn", { allow: ["warn", "error"] }],
+      "no-debugger": "warn",
+      "no-alert": "warn",
     },
   },
 
@@ -186,7 +190,9 @@ export default [
     rules: {
       "@typescript-eslint/no-explicit-any": "off",
       "@typescript-eslint/no-non-null-assertion": "off",
-      "no-console": "off",
+      "no-console": ["warn", { allow: ["warn", "error"] }],
+      "no-debugger": "warn",
+      "no-alert": "warn",
     },
   },
 
@@ -203,7 +209,9 @@ export default [
     },
     rules: {
       "@typescript-eslint/no-var-requires": "off",
-      "no-console": "off",
+      "no-console": ["warn", { allow: ["warn", "error"] }],
+      "no-debugger": "warn",
+      "no-alert": "warn",
     },
   },
 ];

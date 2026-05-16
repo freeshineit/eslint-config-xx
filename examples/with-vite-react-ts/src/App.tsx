@@ -1,10 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 
 function App() {
   const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    console.log("Hello, I'm a React component!");
+    console.warn("This is a warning message.");
+    console.error("This is an error message.");
+    console.debug("This is a debug message.");
+    console.info("This is an info message.");
+    debugger;
+    window.alert("This is an alert message.");
+  }, []);
 
   return (
     <>

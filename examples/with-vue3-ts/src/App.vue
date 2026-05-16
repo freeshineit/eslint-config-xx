@@ -1,6 +1,15 @@
 <script setup lang="ts">
 import HelloWorld from "./components/HelloWorld.vue";
 import TheWelcome from "./components/TheWelcome.vue";
+
+console.log("Hello, I'm a Lit element!");
+console.warn("This is a warning message.");
+console.error("This is an error message.");
+console.debug("This is a debug message.");
+console.info("This is an info message.");
+
+debugger;
+window.alert("This is an alert message.");
 </script>
 
 <template>

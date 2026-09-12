@@ -14,19 +14,19 @@
     "fmt:check": "prettier --check \"src/**/*.{js,mjs,jsx,ts,tsx,css,md,json,vue}\""
   },
   "dependencies": {
-    "vue": "^3.5.29"
+    "vue": "^3.5.42"
   },
   "devDependencies": {
-    "@tsconfig/node24": "^24.0.4",
-    "@types/node": "^24.11.0",
-    "@vitejs/plugin-vue": "^6.0.4",
-    "@vue/tsconfig": "^0.8.1",
-    "npm-run-all2": "^8.0.4",
+    "@tsconfig/node24": "^24.0.5",
+    "@types/node": "^24.13.4",
+    "@vitejs/plugin-vue": "^6.0.8",
+    "@vue/tsconfig": "^0.9.1",
+    "eslint-config-xx": "workspace:*",
+    "npm-run-all2": "^9.0.3",
     "typescript": "~5.9.3",
-    "vite": "^7.3.1",
-    "vite-plugin-vue-devtools": "^8.0.6",
-    "vue-tsc": "^3.2.5",
-    "eslint-config-xx": "workspace:*"
+    "vite": "^8.3.0",
+    "vite-plugin-vue-devtools": "^8.2.1",
+    "vue-tsc": "^3.3.11"
   },
   "engines": {
     "node": "^20.19.0 || >=22.12.0"

@@ -6,6 +6,8 @@
 
 Support js/ts/jsx/tsx/vue and export prettier config
 
+> Requires Node >=22.
+
 ## install
 
 ```bash

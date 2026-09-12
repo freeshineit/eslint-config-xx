@@ -25,10 +25,10 @@
     "tsconfig.json"
   ],
   "dependencies": {
-    "eslint": "^9.33.0",
-    "prettier": "^3.6.2",
-    "typescript": "^5.9.2",
-    "eslint-config-xx": "workspace:*"
+    "eslint": "^10.10.0",
+    "eslint-config-xx": "workspace:*",
+    "prettier": "^3.9.6",
+    "typescript": "^5.9.3"
   },
   "repository": "git@github.com:freeshineit/eslint-config-xx.git",
   "bugs": {
@@ -39,10 +39,10 @@
     "node": ">=18"
   },
   "devDependencies": {
-    "@commitlint/cli": "^20.2.0",
-    "@commitlint/config-conventional": "^20.2.0",
-    "only-allow": "^1.2.1",
-    "pretty-quick": "^4.2.2",
-    "husky": "^9.1.7"
+    "@commitlint/cli": "^21.2.2",
+    "@commitlint/config-conventional": "^21.2.2",
+    "husky": "^9.1.7",
+    "only-allow": "^1.2.2",
+    "pretty-quick": "^4.2.2"
   }
 }

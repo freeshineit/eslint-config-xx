@@ -64,15 +64,15 @@ jobs:
       # 打包 dist 为自定义压缩包
       - name: Create release archive
         run: |
-          PKG_NAME=$(node -p "require('./package.json').name.replace('@skax/', '')")
-          VERSION=$(node -p "require('./package.json').version")
+          PKG_NAME=$(node -p "require('./configs/package.json').name")
+          VERSION=$(node -p "require('./configs/package.json').version")
           ARCHIVE_NAME="${PKG_NAME}-${VERSION}"
 
-          # 创建包含 src 和 package.json 的 zip 包
-          zip -r "${ARCHIVE_NAME}.zip" src package.json
+          # 创建包含 configs 的 zip 包
+          zip -r "${ARCHIVE_NAME}.zip" configs
 
-          # 创建包含 src 和 package.json 的 tar.gz 包
-          tar -czf "${ARCHIVE_NAME}.tar.gz" src package.json
+          # 创建包含 configs 的 tar.gz 包
+          tar -czf "${ARCHIVE_NAME}.tar.gz" configs
 
           echo "archive_name=${ARCHIVE_NAME}" >> "$GITHUB_OUTPUT"
         id: archive

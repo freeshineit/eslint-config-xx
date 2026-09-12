@@ -50,6 +50,7 @@ jobs:
       - name: Publish npm eslint configs
         working-directory: ./configs
         run: |
+          export COREPACK_ENABLE_AUTO_PIN=0
           pnpm install
           npm publish --tag ${{ steps.determine_tag.outputs.tag }} --access public
 

@@ -69,7 +69,7 @@ jobs:
           ARCHIVE_NAME="${PKG_NAME}-${VERSION}"
 
           # 创建包含 configs 的 zip 包，排除 node_modules
-          zip -r "${ARCHIVE_NAME}.zip" configs -x "configs/**/node_modules/*"
+          zip -r "${ARCHIVE_NAME}.zip" configs -x "configs/node_modules/*"
 
           # 创建包含 configs 的 tar.gz 包，排除 node_modules
           tar -czf "${ARCHIVE_NAME}.tar.gz" --exclude='*/node_modules' configs

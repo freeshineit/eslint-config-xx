@@ -68,11 +68,11 @@ jobs:
           VERSION=$(node -p "require('./configs/package.json').version")
           ARCHIVE_NAME="${PKG_NAME}-${VERSION}"
 
-          # 创建包含 configs 的 zip 包
-          zip -r "${ARCHIVE_NAME}.zip" configs
+          # 创建包含 configs 的 zip 包，排除 node_modules
+          zip -r "${ARCHIVE_NAME}.zip" configs -x "configs/**/node_modules/*"
 
-          # 创建包含 configs 的 tar.gz 包
-          tar -czf "${ARCHIVE_NAME}.tar.gz" configs
+          # 创建包含 configs 的 tar.gz 包，排除 node_modules
+          tar -czf "${ARCHIVE_NAME}.tar.gz" --exclude='*/node_modules' configs
 
           echo "archive_name=${ARCHIVE_NAME}" >> "$GITHUB_OUTPUT"
         id: archive

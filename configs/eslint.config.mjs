@@ -131,7 +131,7 @@ export default [
 
     settings: {
       react: {
-        version: "detect",
+        version: "19.3",
       },
       "import/resolver": {
         typescript: {

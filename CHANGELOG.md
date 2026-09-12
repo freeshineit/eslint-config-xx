@@ -1,3 +1,11 @@
+# v3.0.0-beta.1 (2026-09-12)
+
+## Feat
+
+- support Node >=22
+- update deps (eslint 10, typescript-eslint 8.70, prettier 3.9, vue-eslint-parser 10.4)
+- adjust eslint config compatibility for React version detection
+
 # v2.2.4 (2026-04-26)
 
 ## Feat

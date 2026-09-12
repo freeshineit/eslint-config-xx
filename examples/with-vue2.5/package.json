@@ -9,15 +9,15 @@
     "fmt": "prettier --check \"**/*.{js,mjs,jsx,ts,tsx,vue,css,md,json}\""
   },
   "dependencies": {
-    "vue": "^2.5.17",
-    "vue-router": "^3.6.5"
+    "vue": "^3.5.42",
+    "vue-router": "^5.3.1"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.0.1",
-    "@vue/cli-service": "^3.0.1",
-    "vue-cli-plugin-element": "1.0.0",
-    "vue-template-compiler": "^2.5.17",
-    "eslint-config-xx": "workspace:*"
+    "@vue/cli-plugin-babel": "^5.0.9",
+    "@vue/cli-service": "^5.0.9",
+    "eslint-config-xx": "workspace:*",
+    "vue-cli-plugin-element": "1.0.1",
+    "vue-template-compiler": "^2.7.16"
   },
   "resolutions": {
     "screenfull": "^5.2.0",
